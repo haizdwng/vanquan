@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Văn Quân — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --muted: #555555;
+            --light: #888888;
+            --line: #e5e5e5;
+            --pill-bg: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header đơn giản */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.6rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 14px;
+            transition: color 0.15s;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4.5rem 0 4rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-meta {
+            font-size: 13px;
+            color: var(--light);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 580px;
+            font-size: 15.5px;
+        }
+
+        /* Các mục nội dung */
+        section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .sec-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Giới thiệu */
+        .about p {
+            color: var(--muted);
+            margin-bottom: 1.4rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--pill-bg);
+            color: var(--text);
+            font-size: 13px;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+        }
+
+        /* Học vấn */
+        .edu-item {
+            margin-bottom: 2rem;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+            gap: 1rem;
+        }
+
+        .edu-head h3 {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .edu-year {
+            font-size: 13px;
+            color: var(--light);
+            white-space: nowrap;
+        }
+
+        .edu-sub {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .edu-item p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* Học phần */
+        .course-item {
+            margin-bottom: 1.6rem;
+        }
+
+        .course-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .course-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .course-item p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* Dự án */
+        .project-box h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-box p {
+            color: var(--muted);
+            font-size: 14.5px;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 2px;
+        }
+
+        .project-link:hover {
+            color: var(--muted);
+            border-color: var(--muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 0 3.5rem;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--light);
+        }
+
+        @media (max-width: 600px) {
+            nav { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .edu-head { flex-direction: column; gap: 0.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="#" class="logo">Nguyễn Văn Quân</a>
+            <nav>
+                <a href="#about">Giới thiệu</a>
+                <a href="#education">Học tập</a>
+                <a href="#courses">Học phần</a>
+                <a href="#projects">Dự án</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Mở đầu -->
+            <div class="hero">
+                <div class="hero-meta">Trường Kỹ thuật và Công nghệ — Đại học Vinh</div>
+                <h1>Nguyễn Văn Quân</h1>
+                <p>
+                    Sinh viên ngành Công nghệ thông tin. Tập trung vào phát triển ứng dụng Web, thiết kế cơ sở dữ liệu và rèn luyện tư duy cấu trúc dữ liệu & giải thuật.
+                </p>
+            </div>
+
+            <!-- Giới thiệu -->
+            <section id="about" class="about">
+                <div class="sec-label">Giới thiệu</div>
+                <p>
+                    Mình học lập trình bằng cách tự xây dựng các sản phẩm thực tế từ kiến thức trên giảng đường, chú trọng cấu trúc mã nguồn rõ ràng, dữ liệu mạch lạc và trải nghiệm người dùng đơn giản, hiệu quả.
+                </p>
+                <div class="tags">
+                    <span class="tag">HTML / CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">C / C++</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Git</span>
+                </div>
+            </section>
+
+            <!-- Học vấn -->
+            <section id="education">
+                <div class="sec-label">Quá trình học tập</div>
+
+                <div class="edu-item">
+                    <div class="edu-head">
+                        <h3>Đại học Vinh</h3>
+                        <span class="edu-year">2025 — Hiện tại</span>
+                    </div>
+                    <div class="edu-sub">Trường Kỹ thuật và Công nghệ — Ngành Công nghệ thông tin</div>
+                    <p>Học tập kiến thức chuyên ngành và thực hành qua các bài tập lớn về lập trình web, cơ sở dữ liệu và giải thuật.</p>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-head">
+                        <h3>THPT Yên Thành 2</h3>
+                        <span class="edu-year">2022 — 2025</span>
+                    </div>
+                    <div class="edu-sub">Trung học phổ thông</div>
+                    <p>Hoàn thành chương trình phổ thông, xây dựng nền tảng tư duy logic và định hướng theo đuổi lĩnh vực Công nghệ thông tin.</p>
+                </div>
+            </section>
+
+            <!-- Học phần -->
+            <section id="courses">
+                <div class="sec-label">Học phần trọng tâm</div>
+
+                <div class="course-item">
+                    <h3>Lập trình Web</h3>
+                    <p>Xây dựng giao diện người dùng chuẩn Responsive và xử lý tương tác bằng HTML, CSS, JavaScript.</p>
+                </div>
+
+                <div class="course-item">
+                    <h3>Cơ sở dữ liệu</h3>
+                    <p>Thiết kế mô hình thực thể liên kết (ERD), chuẩn hóa dữ liệu quan hệ và truy vấn SQL.</p>
+                </div>
+
+                <div class="course-item">
+                    <h3>Cấu trúc dữ liệu & Giải thuật</h3>
+                    <p>Cài đặt mảng, danh sách liên kết, cây, đồ thị và các thuật toán tìm kiếm, sắp xếp bằng C/C++.</p>
+                </div>
+            </section>
+
+            <!-- Dự án -->
+            <section id="projects">
+                <div class="sec-label">Dự án của tôi</div>
+
+                <div class="project-box">
+                    <h3>Website Bán hàng & Cho thuê sản phẩm</h3>
+                    <p>
+                        Nền tảng thương mại điện tử tích hợp song song hai mô hình mua bán và cho thuê sản phẩm. Hỗ trợ danh mục sản phẩm, tìm kiếm lọc thông minh, giỏ hàng, tính phí thuê theo thời gian và quản lý đơn hàng.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <a href="https://github.com/haizdwng/vanquan" target="_blank" class="project-link">
+                        Mã nguồn GitHub ↗
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © 2026 Nguyễn Văn Quân — Trường Kỹ thuật và Công nghệ, Đại học Vinh.
+        </footer>
+    </div>
+
+</body>
+</html>
